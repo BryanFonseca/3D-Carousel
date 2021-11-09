@@ -35,7 +35,7 @@ button{
 .main-grid{
   display: grid;
   grid-template-columns: minmax(0, 5.6fr) minmax(0, 4.4fr);
-  height: 80vh;
+  min-height: 80vh;
   background-color: var(--dark-color);
   border-radius: 1.5em;
   width: 65%;
@@ -149,8 +149,8 @@ button{
 }
 
 .carousel-item{
-  height: 12rem;
-  width: 10rem;
+  height: 55%;
+  width: 45%;
   border-radius: 0.5em;
   position: absolute;
 }
@@ -170,7 +170,7 @@ button{
 
 @keyframes card-moves-to-center{
   0%{
-    transform: translateX(208px) translateZ(-2px);
+    transform: translateX(140%) translateZ(-2px);
   }
   100%{
     transform: translateZ(15px);
@@ -182,25 +182,25 @@ button{
     transform: translateZ(15px);
   }
   100%{
-    transform: translateX(-208px) translateZ(-2px);
+    transform: translateX(-140%) translateZ(-2px);
   }
 }
 
 /* Forman una sola animación */
 @keyframes card-restarts{
   0%{
-    transform: translateX(-208px) translateZ(-2px);
+    transform: translateX(-140%) translateZ(-2px);
   }
   100%{
-    transform: translateX(-280px) translateZ(-2px);
+    transform: translateX(-200%) translateZ(-2px);
   }
 }
 
 @keyframes card-restarts-right{
   0%{
-    transform: translateX(280px) translateZ(-2px);
+    transform: translateX(180%) translateZ(-2px);
   }
   100%{
-    transform: translateX(208px) translateZ(-2px);
+    transform: translateX(140%) translateZ(-2px);
   }
 }
