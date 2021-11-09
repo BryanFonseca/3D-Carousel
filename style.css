@@ -1,0 +1,206 @@
+:root{
+  --dark-color: #050405;
+  --pink: #db575f;
+  --purple: #6f4eca;
+  --purple-light: #9356b1;
+  --gold: #c1ab77;
+  --brown: #4f424a;
+  --gray-light: #dfd7d9;
+  --red: #a24b4b;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', 'Ubuntu', sans-serif;
+  color: #eee;
+  height: 100vh;
+  background-image: linear-gradient(to right, var(--red), var(--gold), var(--purple));
+  background-blend-mode: darken;
+}
+
+button{
+  border: none;
+  outline: none;
+}
+
+.main-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 5.6fr) minmax(0, 4.4fr);
+  height: 80vh;
+  background-color: var(--dark-color);
+  border-radius: 1.5em;
+  width: 65%;
+}
+
+.main-grid > *{
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.main-content{
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.info h1{
+  line-height: 1.1;
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.info p{
+  width: 70%;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 3.5em;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.9rem;
+}
+
+.navbar ion-icon{
+  height: 30px;
+  width: 30px;
+  margin-right: 2em;
+}
+
+.info form{
+  background-color: var(--gray-light);
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.6em;
+  font-size: 1rem;
+  padding: 0.2em;
+}
+
+.info form > input[type="email"]{
+  font-size: 0.8em;
+  outline: none;
+  border: none;
+  background-color: var(--gray-light);
+  background-color: transparent;
+  margin: 0 1em;
+}
+
+.info form > button{
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--gray-light);
+  min-height: 3em;
+  padding: 0 1em;
+  border-radius: 0.5em;
+  background-image: linear-gradient(var(--purple-light), var(--pink));
+}
+
+.carousel-container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-image: linear-gradient(to bottom, var(--gold), var(--purple-light));
+  margin: 1.5em;
+  border-radius: 1.4em;
+}
+
+.cta-button{
+  position: absolute;
+  right: 0;
+  margin: 1.2em;
+  padding: 0.95em;
+  border-radius: 0.7em;
+  color: #222;
+}
+
+.carousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  margin-top: 9rem;
+  height: 70%;
+  overflow: hidden;
+  perspective-origin: center;
+  perspective: 100px;
+  position: relative;
+}
+
+.carousel > *{
+  flex-shrink: 0;
+}
+
+.carousel-item{
+  height: 12rem;
+  width: 10rem;
+  border-radius: 0.5em;
+  position: absolute;
+}
+
+.carousel-item:nth-child(1){
+  background-color: var(--brown);
+  animation-fill-mode: forwards;
+}
+.carousel-item:nth-child(2){
+  background-color: var(--red);
+  animation-fill-mode: forwards;
+}
+.carousel-item:nth-child(3){
+  background-color: var(--gold);
+  animation-fill-mode: forwards;
+}
+
+@keyframes card-moves-to-center{
+  0%{
+    transform: translateX(208px) translateZ(-2px);
+  }
+  100%{
+    transform: translateZ(15px);
+  }
+}
+
+@keyframes card-moves-from-center{
+  0%{
+    transform: translateZ(15px);
+  }
+  100%{
+    transform: translateX(-208px) translateZ(-2px);
+  }
+}
+
+/* Forman una sola animación */
+@keyframes card-restarts{
+  0%{
+    transform: translateX(-208px) translateZ(-2px);
+  }
+  100%{
+    transform: translateX(-280px) translateZ(-2px);
+  }
+}
+
+@keyframes card-restarts-right{
+  0%{
+    transform: translateX(280px) translateZ(-2px);
+  }
+  100%{
+    transform: translateX(208px) translateZ(-2px);
+  }
+}
